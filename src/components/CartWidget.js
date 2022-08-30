@@ -1,10 +1,13 @@
 import React from 'react'
 
+
 const CartWidget = () => {
     return (
-        <div>
-            <img className="cart" src="/public/carrito.png" alt="" />
-            <span>3</span>
+        <div className='cart'>
+            <span className="material-icons">
+                shopping_cart
+            </span>
+            <span className='number'>3</span>
         </div>
     )
 }

@@ -22,12 +22,14 @@ ul li a {
     display: flex;
     background-color: #00784A;
     justify-content: space-between;
+    align-items: center;
 }
 
 .navItems {
     display: flex;
     align-items: center;
     padding: 50px;
+
 
 }
 
@@ -44,13 +46,26 @@ ul li {
 .login {
     display: flex;
     height: 40px;
-    width: 50px;
-    margin-top: 40px;
-    margin-right: 20px;
+    width: fit-content;
+    align-items: center;
+    padding: 10px;
+
 
 }
 
 .cart {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.material-icons {
     width: 30px;
     height: 30px;
+    color: white;
+
+}
+
+.number {
+    color: white;
 }
