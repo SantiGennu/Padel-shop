@@ -10,6 +10,7 @@ const NavBar = () => {
             </ul>
             <button className="login">Login</button>
             < CartWidget />
+
         </nav>
 
 
