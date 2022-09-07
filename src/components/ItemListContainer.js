@@ -1,16 +1,27 @@
-import React from 'react'
-import ItemCount from './NavBar/ItemCount'
+import React, { useState, useEffect } from 'react';
+import ItemList from './ItemList'
+import { getProductos } from '../Api';
 
 
 
-const ItemListContainer = ({ greetings }) => {
+const ItemListContainer = ({ greeting }) => {
+    const [listaPaletas, setlistaPaletas] = useState([]);
+
+
+    useEffect(() => {
+        getProductos().then(response => {
+            setlistaPaletas(response)
+        })
+    }, [])
+
     return (
-        <div>
-            <h2>{greetings}</h2>
-            <ItemCount />
-        </div>
-
+        <>
+            <h3 className='greeting'>{greeting}</h3>
+            <ItemList listaPaletas={listaPaletas} />
+        </>
     )
 }
+
+
 
 export default ItemListContainer
