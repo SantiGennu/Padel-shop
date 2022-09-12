@@ -24,7 +24,7 @@ export const Item = ({ listaPaletas }) => {
                             <Card.Text>
                                 ${item.precio}
                             </Card.Text>
-                            <ItemCount stock={5} initial={1} onAdd={onAdd} />
+                            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
                             <Button className='comprar' variant="primary">Comprar</Button>
                         </Card.Body>
                     </Card>
