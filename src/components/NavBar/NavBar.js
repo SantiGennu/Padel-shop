@@ -2,8 +2,9 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
 import CartWidget from './CartWidget';
+
 
 
 function NavBar() {
@@ -11,25 +12,30 @@ function NavBar() {
         <>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#home"><img src="/logo1.png" alt="logo" id='logo' /></Navbar.Brand>
+                    <NavLink to={"/"}><img src="/logo1.png" alt="logo" id='logo' /></NavLink>
                     <div>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                             <Nav className="me-auto">
-                                <Nav.Link className='barra' href="#home">Inicio</Nav.Link>
-                                <Nav.Link className='barra' href="#link">Paletas</Nav.Link>
-                                <NavDropdown title="otros productos" id="basic-nav-dropdown">
-                                    <NavDropdown.Item href="#action/3.1"> Accesorios</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">
-                                        Pelotas
-                                    </NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Otros</NavDropdown.Item>
+                                <NavLink to={'/'} className='barra'>Inicio</NavLink>
+                                <NavLink to={'/categoria/paletas'} className='barra'>Paletas</NavLink>
+                                <NavLink to={'/categoria/accesorios'} className='barra'>Accesorios</NavLink>
+                                {/* 
+                                <NavDropdown title="paletas" id="basic-nav-dropdown">
+                                    <NavDropdown.Item> Head</NavDropdown.Item>
+                                    <NavDropdown.Item>Wilson</NavDropdown.Item>
+                                    <NavDropdown.Item>Bullpadel</NavDropdown.Item>
+                                    <NavDropdown.Item>Dunlop</NavDropdown.Item>
+                                    <NavDropdown.Item>Nox</NavDropdown.Item>
+                                    <NavDropdown.Item>Siux</NavDropdown.Item>
+                                    <NavDropdown.Item>Volt</NavDropdown.Item>
 
-                                </NavDropdown>
+                                </NavDropdown> */}
                             </Nav>
                         </Navbar.Collapse>
                     </div>
                     <CartWidget />
+
                     <button className="login">Login</button>
                 </Container>
             </Navbar>

@@ -81,3 +81,11 @@
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 2.3em;
 }
+
+.detalleProducto {
+    background-color: #00784A;
+    padding: 5px;
+    color: white;
+    text-decoration: none;
+
+}

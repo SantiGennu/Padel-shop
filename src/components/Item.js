@@ -1,18 +1,20 @@
 import React from 'react'
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
-import ItemCount from './ItemCount'
+import { Link } from 'react-router-dom';
 
 
-const onAdd = (cant) => {
-    alert(`Se agregaron ${cant} unidad al carrito`)
-}
 
-export const Item = ({ listaPaletas }) => {
+
+// const onAdd = (cant) => {
+//     alert(`Se agregaron ${cant} unidad al carrito`)
+// }
+
+export const Item = ({ productos }) => {
 
     return (
         <div className='container'>
-            {listaPaletas.map((item) => {
+            {productos.map((item) => {
                 return (
                     <Card key={item.id} style={{ width: '18rem' }}>
                         <Card.Img variant="top" src={item.img} />
@@ -24,8 +26,7 @@ export const Item = ({ listaPaletas }) => {
                             <Card.Text>
                                 ${item.precio}
                             </Card.Text>
-                            <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
-                            <Button className='comprar' variant="primary">Comprar</Button>
+                            <Link to={`/detail/${item.id}`} className='detalleProducto' variant="primary">ver detalle del producto</Link>
                         </Card.Body>
                     </Card>
                 )

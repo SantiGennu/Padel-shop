@@ -4,9 +4,12 @@ import Item from './Item'
 
 
 
-const ItemList = ({ listaPaletas }) => {
+const ItemList = ({ productos }) => {
     return (
-        <Item listaPaletas={listaPaletas} />
+        <div>
+            <Item productos={productos} />
+
+        </div>
     )
 }
 
