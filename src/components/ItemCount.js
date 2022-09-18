@@ -3,7 +3,7 @@ import Button from 'react-bootstrap/Button';
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-    const [cant, setCant] = React.useState(1);
+    const [cant, setCant] = React.useState(0);
 
     return (
         <div className='counter'>
