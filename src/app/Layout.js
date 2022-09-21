@@ -9,9 +9,7 @@ const Layout = () => {
 
         <div>
             <NavBar />
-            <section>
-                <Outlet />
-            </section>
+            <Outlet />
         </div>
     )
 }

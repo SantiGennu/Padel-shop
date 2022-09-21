@@ -6,10 +6,10 @@ import gorra from "../assets/gorra.bullpadel.jpg"
 import munequera from "../assets/munequera.jpg"
 import pelotaAdidas from "../assets/pelotas.adidas.jpg"
 import pelotaHead from "../assets/pelotas.head.jpg"
-import pelotaWilson from "./ItemListContainer"
+import pelotaWilson from "../assets/pelotas.wilson.jpg"
 import head from "../assets/head.jpg"
 import adidas from "../assets/paleta.jpg"
-import wilson from "../assets/wilson.jpg"
+import wilson from "../assets/pelotas.wilson.jpg"
 import nox from "../assets/nox.jpg"
 import bullpadel from "../assets/bullpadel.jpg"
 import dunlop from "../assets/dunlop.jpg"
@@ -27,6 +27,7 @@ class productos {
         this.img = img;
         this.id = id;
         this.stock = stock
+
     }
 }
 
@@ -66,7 +67,7 @@ const ItemDetailContainer = () => {
         getItem.then(res => setItem(res.find(productos => productos.id === parseInt(detailId))));
 
 
-    }, []);
+    }, [detailId]);
 
 
     return (

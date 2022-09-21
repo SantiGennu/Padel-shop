@@ -1,8 +1,9 @@
-import React from 'react'
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 import ItemCount from '../components/ItemCount';
+import { useCartContext } from '../CartContext';
 
 
 
@@ -10,7 +11,14 @@ import ItemCount from '../components/ItemCount';
 
 
 const ItemDetail = ({ item }) => {
-    const [count, setCount] = React.useState(0)
+    const [goToCart, setGoToCart] = useState(false);
+    const { addItem } = useCartContext();
+
+    const onAdd = (quantity) => {
+        setGoToCart(true)
+        addItem(item, quantity);
+
+    }
 
 
     return (
@@ -28,11 +36,9 @@ const ItemDetail = ({ item }) => {
                         ${item.precio}
                     </Card.Text>
                     {
-                        count === 0
-                            ? <ItemCount stock={item.stock} initial={1} onAdd={(c) => {
-                                setCount(c);
-                            }} />
-                            : <Link to="/cart" > Terminar compra </Link>
+                        goToCart
+                            ? <Link to="/cart" > Terminar compra </Link>
+                            : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
                     }
 
 

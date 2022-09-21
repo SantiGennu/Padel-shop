@@ -13,7 +13,7 @@ import gorra from "../assets/gorra.bullpadel.jpg"
 import munequera from "../assets/munequera.jpg"
 import pelotaAdidas from "../assets/pelotas.adidas.jpg"
 import pelotaHead from "../assets/pelotas.head.jpg"
-import pelotaWilson from "../assets/pelotas.wilson.webp"
+import pelotaWilson from "../assets/pelotas.wilson.jpg"
 
 
 class productos {

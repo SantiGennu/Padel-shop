@@ -1,16 +1,11 @@
-import React from 'react'
-// import Button from 'react-bootstrap/Button';
+
 import Card from 'react-bootstrap/Card';
 import { Link } from 'react-router-dom';
 
 
-
-
-// const onAdd = (cant) => {
-//     alert(`Se agregaron ${cant} unidad al carrito`)
-// }
-
 export const Item = ({ productos }) => {
+
+
 
     return (
         <div className='container'>

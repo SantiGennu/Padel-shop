@@ -1,9 +1,9 @@
-import React from 'react'
+import { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 
 
 const ItemCount = ({ stock, initial, onAdd }) => {
-    const [cant, setCant] = React.useState(0);
+    const [cant, setCant] = useState(1);
 
     return (
         <div className='counter'>
