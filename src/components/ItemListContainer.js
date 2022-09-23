@@ -17,14 +17,14 @@ import pelotaWilson from "../assets/pelotas.wilson.jpg"
 
 
 class productos {
-    constructor(nombre, modelo, descripcion, categoria, precio, img, id, stock) {
+    constructor(nombre, modelo, descripcion, categoria, precio, imagen, id, stock) {
 
         this.nombre = nombre;
         this.modelo = modelo;
         this.descripcion = descripcion
         this.categoria = categoria
         this.precio = precio;
-        this.img = img;
+        this.imagen = imagen;
         this.id = id;
         this.stock = stock
     }

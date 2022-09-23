@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
         <div className='container'>
 
             <Card key={item.id} style={{ width: '30rem' }}>
-                <Card.Img variant="top" src={item.img} />
+                <Card.Img variant="top" src={item.imagen} />
                 <Card.Body>
                     <Card.Title><h1>{item.nombre}</h1></Card.Title>
                     <Card.Text >
@@ -35,6 +35,7 @@ const ItemDetail = ({ item }) => {
                     <Card.Text>
                         ${item.precio}
                     </Card.Text>
+
                     {
                         goToCart
                             ? <Link to="/cart" > Terminar compra </Link>

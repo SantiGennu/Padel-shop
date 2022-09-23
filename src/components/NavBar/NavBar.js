@@ -20,20 +20,11 @@ function NavBar() {
                                 <NavLink to={'/'} className='barra'>Inicio</NavLink>
                                 <NavLink to={'/categoria/paletas'} className='barra'>Paletas</NavLink>
                                 <NavLink to={'/categoria/accesorios'} className='barra'>Accesorios</NavLink>
-                                {/* 
-                                <NavDropdown title="paletas" id="basic-nav-dropdown">
-                                    <NavDropdown.Item> Head</NavDropdown.Item>
-                                    <NavDropdown.Item>Wilson</NavDropdown.Item>
-                                    <NavDropdown.Item>Bullpadel</NavDropdown.Item>
-                                    <NavDropdown.Item>Dunlop</NavDropdown.Item>
-                                    <NavDropdown.Item>Nox</NavDropdown.Item>
-                                    <NavDropdown.Item>Siux</NavDropdown.Item>
-                                    <NavDropdown.Item>Volt</NavDropdown.Item>
 
-                                </NavDropdown> */}
                             </Nav>
                         </Navbar.Collapse>
                     </div>
+
                     <CartWidget />
 
                     <button className="login">Login</button>
