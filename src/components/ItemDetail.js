@@ -42,8 +42,6 @@ const ItemDetail = ({ item }) => {
                             : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
                     }
 
-
-                    <Button className='comprar' variant="primary">Comprar</Button>
                 </Card.Body>
             </Card>
 
