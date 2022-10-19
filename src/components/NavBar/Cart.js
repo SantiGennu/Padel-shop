@@ -1,7 +1,10 @@
 import { useCartContext } from "../../CartContext"
 import { Link } from "react-router-dom"
+import { useState } from "react";
 import ItemCart from "../ItemCart"
 import { addDoc, collection, getFirestore } from "firebase/firestore";
+
+
 
 
 
@@ -9,26 +12,21 @@ const Cart = () => {
 
     const { cart, totalPrice } = useCartContext();
 
-    const orden = {
-        comprador: {
-            nombre: "santiago",
-            email: "santiago@hotmail.com",
-            telefono: "23546677",
-            direccion: "Aalborggade 21"
+    const [user, setUser] = useState({
 
-        },
-        items: cart.map(item => ({ nombre: item.nombre, id: item.id, modelo: item.modelo, precio: item.precio, cantidad: item.cantidad })),
-        total: totalPrice(),
+        compras: cart.map(item => ({ nombre: item.nombre, id: item.id, modelo: item.modelo, precio: item.precio, cantidad: item.cantidad })),
+
+        Total: totalPrice(),
 
 
-    }
+    })
 
     const agregar = () => {
         const db = getFirestore();
         const ordenesCollection = collection(db, "ordenes");
-        addDoc(ordenesCollection, orden)
+        addDoc(ordenesCollection, user)
             .then(({ id }) => console.log({ id }))
-
+        alert("La compra ha sido realizada")
 
     }
 
@@ -44,16 +42,31 @@ const Cart = () => {
         );
     }
     return (
-        <>
+        <div className="cartContainer">
+            <form >
+                <label>Nombre</label>
+                <input type="text" value={user.nombre} onChange={(e) => setUser({ ...user, nombre: e.target.value })}></input>
+                <label>Apellido</label>
+                <input type="text" value={user.apellido} onChange={(e) => setUser({ ...user, apellido: e.target.value })}></input>
+                <label>Telefono</label>
+                <input type="number" value={user.telefono} onChange={(e) => setUser({ ...user, telefono: e.target.value })}></input>
+                <label>Email</label>
+                <input type="text" value={user.email} onChange={(e) => setUser({ ...user, email: e.target.value })}></input>
+
+            </form>
+
             {
                 cart.map(item => <ItemCart key={item.id} item={item} />)
 
             }
             <p>
-                Total: {totalPrice()}
+                Precio final: {totalPrice()}
             </p>
-            <button onClick={agregar}>Realizar comprar</button>
-        </>
+
+
+
+            <button onClick={agregar}> Realizar comprar</button>
+        </div>
 
 
 
